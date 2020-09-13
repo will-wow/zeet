@@ -5,7 +5,9 @@ import "aframe-extras";
 import "aframe-layout-component";
 import "aframe-look-at-component";
 
-// import "./aframe/components";
+import "./aframe/components/world-tracking-hack";
+import "./aframe/components/marker-mover";
+import "./aframe/components/raycaster-move";
 
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
@@ -21,5 +23,3 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
-
-// latitude: 34.046675799999996, longitude: -118.4513455

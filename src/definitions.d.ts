@@ -6,6 +6,10 @@ declare namespace JSX {
     "a-assets": any;
     "a-camera": any;
     "a-asset-item": any;
+    "a-ring": any;
+    "a-text": any;
+    "a-marker": any;
+    "a-marker-camera": any;
   }
 }
 
@@ -24,6 +28,8 @@ declare module "aframe-react" {
     mixin?: string;
     geometry?: AframeComponent;
     material?: AframeComponent;
+    position?: AframeComponent;
+    raycaster?: AframeComponent;
     text?: AframeComponent;
     camera?: AframeComponent;
     _ref?: any;

@@ -1,4 +1,4 @@
-import { Component } from "aframe";
+import { Component, Entity } from "aframe";
 import { Vector3 } from "three";
 
 export interface RaycasterComponent extends Component {
@@ -6,4 +6,5 @@ export interface RaycasterComponent extends Component {
   intersections: {
     point: Vector3;
   }[];
+  getIntersection(element: Entity): any;
 }

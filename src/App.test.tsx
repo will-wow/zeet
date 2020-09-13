@@ -1,10 +1,10 @@
 import React from "react";
 import { shallow } from "enzyme";
+import { Scene } from "aframe-react";
 
-import AppScene from "./components/AppScene";
 import App from "./App";
 
-test("renders learn react link", () => {
+test("renders scene", () => {
   const wrapper = shallow(<App />);
-  expect(wrapper.find(AppScene)).toHaveLength(1);
+  expect(wrapper.find(Scene)).toHaveLength(1);
 });
