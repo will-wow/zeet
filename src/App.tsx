@@ -18,6 +18,7 @@ const App: React.FunctionComponent = () => {
         world-tracking-hack
         ar="worldSensing: true"
         raycaster-move="target:#mark"
+        place-on-click="mark: #mark; object: #object; camera: #camera"
       >
         <Assets />
 
@@ -34,19 +35,15 @@ const App: React.FunctionComponent = () => {
           radius-outer="0.02"
         ></a-ring>
 
-        {/* <Entity
-          position="0 -1 0"
-          scale="0.05 0.05 0.05"
-          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
-        ></Entity> */}
+        <Entity id="object" position="0 0 -2" gltf-model="#pom" />
 
-        <a-camera>
+        <a-camera id="camera">
           <a-text
             id="hud"
             align="center"
             wrap-count="800"
             position="0 -0.1 -0.25"
-            value="heads up"
+            value="move phone from side to side"
           ></a-text>
         </a-camera>
       </Scene>

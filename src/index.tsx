@@ -8,6 +8,7 @@ import "aframe-look-at-component";
 import "./aframe/components/world-tracking-hack";
 import "./aframe/components/marker-mover";
 import "./aframe/components/raycaster-move";
+import "./aframe/components/place-on-click";
 
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";

@@ -25,15 +25,11 @@ export const RaycasterMoveComponent: CompDefinition<
         intersections: any[];
       }>
     ) {
-      console.log("move");
       this.raycaster = event.detail.el;
     },
     "raycaster-intersected-cleared"() {
       this.raycaster = null;
     },
-  },
-  init() {
-    console.log("mark", this.data.target);
   },
   tick() {
     if (!this.raycaster) {
@@ -46,7 +42,7 @@ export const RaycasterMoveComponent: CompDefinition<
     if (!intersection) {
       return;
     }
-    //console.log(intersection.point);
+
     this.data.target.setAttribute("position", intersection.point);
   },
 };

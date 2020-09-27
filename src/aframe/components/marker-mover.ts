@@ -15,7 +15,6 @@ export const MarkMoverComponent: CompDefinition<MarkMoverData> = {
     "raycaster-intersection"(
       event: DetailEvent<{ el: Entity; intersections: any[] }>
     ) {
-      console.log("inter", event);
       this.data.mark.setAttribute("color", "green");
     },
 
