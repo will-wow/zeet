@@ -1752,6 +1752,11 @@ adjust-sourcemap-loader@2.0.0:
     object-path "0.11.4"
     regex-parser "2.2.10"
 
+aframe-environment-component@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/aframe-environment-component/-/aframe-environment-component-2.0.0.tgz#051e28d1acf907df9a7c1cfff8aecf8465eac45e"
+  integrity sha512-Z1Qyefbp0tPK+CM4CoUU0X66IRdYsfHlvA8qVQkbRUCjd8W9CsSRkXKRMhDZl2tfGZOvfvdYgcqV3YLTkbW75Q==
+
 aframe-extras@^6.1.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/aframe-extras/-/aframe-extras-6.1.0.tgz#75bff7d5e0f76ee424214500cd182c0baa410c9f"
