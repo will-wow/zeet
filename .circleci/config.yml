@@ -22,7 +22,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: yarn lint
-      - run: yarn test:coverage
+      - run: yarn test:ci
 
   deploy:
     docker:
@@ -40,7 +40,7 @@ jobs:
       - run:
           name: Configure git
           command: |
-            git config user.email "ci-build@ae.studio"
+            git config user.email "ci-build@willwow.dev"
             git config user.name "ci-build"
 
       - run: yarn build
