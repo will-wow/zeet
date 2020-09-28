@@ -8,8 +8,7 @@ declare namespace JSX {
     "a-asset-item": any;
     "a-ring": any;
     "a-text": any;
-    "a-marker": any;
-    "a-marker-camera": any;
+    "a-light": any;
   }
 }
 
@@ -33,6 +32,7 @@ declare module "aframe-react" {
     text?: AframeComponent;
     camera?: AframeComponent;
     _ref?: any;
+    [component: string]: any;
   }
 
   export class Entity<

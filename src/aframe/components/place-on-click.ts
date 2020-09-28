@@ -6,6 +6,7 @@ interface MarkMoverData {
   mark: Entity;
   object: Entity;
   camera: Entity;
+  shadowPlane: Entity;
 }
 
 interface MarkMoverMethods {
@@ -21,6 +22,7 @@ export const PlaceOnClickComponent: CompDefinition<
     mark: { type: "selector" },
     object: { type: "selector" },
     camera: { type: "selector" },
+    shadowPlane: { type: "selector" },
   },
   init() {
     window.addEventListener("click", () => this.placeObject());
@@ -28,6 +30,7 @@ export const PlaceOnClickComponent: CompDefinition<
   placeObject() {
     const { x, y, z } = this.data.mark.getAttribute("position");
     this.data.object.object3D.position.set(x, y, z);
+    this.data.shadowPlane.object3D.position.set(x, y, z);
 
     const { x: cameraX, z: cameraZ } = this.data.camera.getAttribute(
       "position"
