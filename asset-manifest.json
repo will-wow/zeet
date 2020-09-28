@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/static/js/main.57a64ff2.chunk.js",
-    "main.js.map": "/static/js/main.57a64ff2.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.d227dc75.js",
-    "runtime-main.js.map": "/static/js/runtime-main.d227dc75.js.map",
-    "static/js/2.5a5f8f15.chunk.js": "/static/js/2.5a5f8f15.chunk.js",
-    "static/js/2.5a5f8f15.chunk.js.map": "/static/js/2.5a5f8f15.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.5d5bbbf023c4e87a733df2189442c67f.js": "/precache-manifest.5d5bbbf023c4e87a733df2189442c67f.js",
-    "service-worker.js": "/service-worker.js",
-    "static/js/2.5a5f8f15.chunk.js.LICENSE.txt": "/static/js/2.5a5f8f15.chunk.js.LICENSE.txt"
+    "main.js": "/zeet/static/js/main.440fcc70.chunk.js",
+    "main.js.map": "/zeet/static/js/main.440fcc70.chunk.js.map",
+    "runtime-main.js": "/zeet/static/js/runtime-main.a451cf13.js",
+    "runtime-main.js.map": "/zeet/static/js/runtime-main.a451cf13.js.map",
+    "static/js/2.6bfbcb33.chunk.js": "/zeet/static/js/2.6bfbcb33.chunk.js",
+    "static/js/2.6bfbcb33.chunk.js.map": "/zeet/static/js/2.6bfbcb33.chunk.js.map",
+    "index.html": "/zeet/index.html",
+    "precache-manifest.47616c84ebf43d17eb66a1918c567e90.js": "/zeet/precache-manifest.47616c84ebf43d17eb66a1918c567e90.js",
+    "service-worker.js": "/zeet/service-worker.js",
+    "static/js/2.6bfbcb33.chunk.js.LICENSE.txt": "/zeet/static/js/2.6bfbcb33.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.d227dc75.js",
-    "static/js/2.5a5f8f15.chunk.js",
-    "static/js/main.57a64ff2.chunk.js"
+    "static/js/runtime-main.a451cf13.js",
+    "static/js/2.6bfbcb33.chunk.js",
+    "static/js/main.440fcc70.chunk.js"
   ]
 }
