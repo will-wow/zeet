@@ -1,6 +1,6 @@
-# Place
+# Zeet
 
-Play with a friendly robo-buddy of your own in WebVR!
+Play with a virtual friend in AR/VR with Aframe
 
 ## Available Scripts
 

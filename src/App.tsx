@@ -38,7 +38,7 @@ const App: React.FunctionComponent = () => {
         <Entity
           id="object"
           position="0 0 -2"
-          gltf-model="#pom"
+          gltf-model="#zeet"
           animation-mixer="clip: Idle"
           shadow="receive: false; cast: true"
         />
