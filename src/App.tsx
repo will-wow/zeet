@@ -14,11 +14,13 @@ const App: React.FunctionComponent = () => {
   return (
     <>
       <GlobalStyle />
+      <video id="video" autoPlay muted playsInline />
       <Scene
         world-tracking-hack
         ar="worldSensing: true"
         raycaster-move="target:#mark"
         place-on-click="mark: #mark; object: #object; shadowPlane: #shadow-plane; camera: #camera"
+        face-api="object: #object; hud: #hud"
       >
         <Assets />
 
@@ -41,6 +43,7 @@ const App: React.FunctionComponent = () => {
           gltf-model="#zeet"
           animation-mixer="clip: Idle"
           shadow="receive: false; cast: true"
+          visible="false"
         />
 
         <Entity
@@ -80,7 +83,7 @@ const App: React.FunctionComponent = () => {
             align="center"
             wrap-count="800"
             position="0 -0.1 -0.25"
-            value="move phone from side to side"
+            value="loading..."
           ></a-text>
         </a-camera>
       </Scene>

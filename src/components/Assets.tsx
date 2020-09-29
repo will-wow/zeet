@@ -1,9 +1,11 @@
 import React from "react";
 
+const zeetAsset = `${process.env.PUBLIC_URL}/assets/zeet/zeet.gltf`;
+
 const Assets: React.FunctionComponent = () => {
   return (
     <a-assets>
-      <a-asset-item id="zeet" src="assets/zeet.glb"></a-asset-item>
+      <a-asset-item id="zeet" src={zeetAsset}></a-asset-item>
     </a-assets>
   );
 };

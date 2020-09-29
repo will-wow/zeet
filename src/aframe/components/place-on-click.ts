@@ -25,7 +25,11 @@ export const PlaceOnClickComponent: CompDefinition<
     shadowPlane: { type: "selector" },
   },
   init() {
-    window.addEventListener("click", () => this.placeObject());
+    window.addEventListener("click", () => {
+      if (this.el.sceneEl?.is("ar-mode")) {
+        this.placeObject();
+      }
+    });
   },
   placeObject() {
     const { x, y, z } = this.data.mark.getAttribute("position");

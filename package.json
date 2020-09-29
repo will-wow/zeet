@@ -17,6 +17,7 @@
     "aframe-look-at-component": "^1.0.0",
     "aframe-react": "^4.4.0",
     "axios": "^0.19.2",
+    "face-api.js": "^0.22.2",
     "immer": "^6.0.9",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

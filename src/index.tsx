@@ -12,6 +12,7 @@ import "./aframe/components/raycaster-move";
 import "./aframe/components/place-on-click";
 import "./aframe/components/ar-shadows";
 import "./aframe/components/hide-in-ar-mode";
+import "./aframe/components/face-api";
 
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";

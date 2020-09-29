@@ -9,11 +9,15 @@ interface HideInArModeMethods {
   exitVr(): void;
 }
 
-export const HideInArModeComponent: CompDefinition<
+export const HideInModeComponent: CompDefinition<
   {},
   HideInArModeState,
   HideInArModeMethods
 > = {
+  schema: {
+    ar: { type: "boolean", default: false },
+    vr: { type: "boolean", default: false },
+  },
   // Set this object invisible while in AR mode.
   init() {
     this.exitVr = this.exitVr.bind(this);
@@ -40,4 +44,4 @@ export const HideInArModeComponent: CompDefinition<
   },
 };
 
-AFRAME.registerComponent("hide-in-ar-mode", HideInArModeComponent);
+AFRAME.registerComponent("hide-in-mode", HideInModeComponent);
