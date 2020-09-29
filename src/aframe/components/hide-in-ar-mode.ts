@@ -44,4 +44,4 @@ export const HideInModeComponent: CompDefinition<
   },
 };
 
-AFRAME.registerComponent("hide-in-mode", HideInModeComponent);
+AFRAME.registerComponent("hide-in-ar-mode", HideInModeComponent);

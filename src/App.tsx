@@ -14,7 +14,13 @@ const App: React.FunctionComponent = () => {
   return (
     <>
       <GlobalStyle />
-      <video id="video" autoPlay muted playsInline />
+      <video
+        id="video"
+        autoPlay
+        muted
+        playsInline
+        style={{ position: "fixed", zIndex: -1 }}
+      />
       <Scene
         world-tracking-hack
         ar="worldSensing: true"
@@ -25,6 +31,7 @@ const App: React.FunctionComponent = () => {
         <Assets />
 
         <Entity
+          id="raycaster"
           ar-raycaster=""
           raycaster="objects: none"
           mark-mover="mark: #mark"
