@@ -61,7 +61,7 @@ export const FaceApiComponent: CompDefinition<
 
   setExpression(expression: FaceExpression | null) {
     const clip = expression === "happy" ? "Wave" : "Idle";
-    this.data.object.setAttribute("animation-mixer", { clip });
+    // this.data.object.setAttribute("animation-mixer", { clip });
   },
 };
 

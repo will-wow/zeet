@@ -45,10 +45,21 @@ const App: React.FunctionComponent = () => {
         ></a-ring>
 
         <Entity
+          id="boombox"
+          className="interactive"
+          play-music="object: #object"
+          geometry="primitive: box; height: 0.4; width: 1; depth: 0.2"
+          material="color: gray"
+          position="-2 0.2 -3"
+          sound="src: #happy-rock"
+          shadow="receive: false; cast: true"
+        />
+
+        <Entity
           id="object"
           position="0 0 -2"
           gltf-model="#zeet"
-          animation-mixer="clip: Idle; crossFadeDuration: 0.1"
+          animation-mixer="clip: Walk; crossFadeDuration: 0.1"
           shadow="receive: false; cast: true"
           visible="false"
         />
@@ -83,6 +94,11 @@ const App: React.FunctionComponent = () => {
           environment="preset: forest; lighting: none; shadow: none; lightPosition: 0 2.15 0"
           hide-in-ar-mode
         />
+
+        <Entity
+          cursor="rayOrigin: mouse"
+          raycaster="objects: .interactive"
+        ></Entity>
 
         <a-camera id="camera">
           <a-text

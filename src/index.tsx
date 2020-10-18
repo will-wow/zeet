@@ -13,6 +13,7 @@ import "./aframe/components/place-on-click";
 import "./aframe/components/ar-shadows";
 import "./aframe/components/hide-in-ar-mode";
 import "./aframe/components/face-api";
+import "./aframe/components/play-music";
 
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
