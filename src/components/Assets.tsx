@@ -1,6 +1,6 @@
 import React from "react";
 
-const zeetAsset = `${process.env.PUBLIC_URL}/assets/zeet/zeet.gltf`;
+const zeetAsset = `${process.env.PUBLIC_URL}/assets/zeet/zeet.glb`;
 
 const Assets: React.FunctionComponent = () => {
   return (

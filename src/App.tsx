@@ -48,7 +48,7 @@ const App: React.FunctionComponent = () => {
           id="object"
           position="0 0 -2"
           gltf-model="#zeet"
-          animation-mixer="clip: Idle"
+          animation-mixer="clip: Idle; crossFadeDuration: 0.1"
           shadow="receive: false; cast: true"
           visible="false"
         />
