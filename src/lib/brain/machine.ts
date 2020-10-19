@@ -1,6 +1,8 @@
 import { BaseState } from "./states/base-state";
 import { BrainContext } from "./brain-context";
 import { IdleState } from "./states/idle-state";
+import { DanceState } from "./states/dance-state";
+import { WaveState } from "./states/wave-state";
 
 export enum State {
   idle = "idle",
@@ -22,8 +24,8 @@ export class Machine {
     this.states = {
       [State.idle]: new IdleState(context, this.setState),
       [State.walk]: new IdleState(context, this.setState),
-      [State.wave]: new IdleState(context, this.setState),
-      [State.dance]: new IdleState(context, this.setState),
+      [State.wave]: new WaveState(context, this.setState),
+      [State.dance]: new DanceState(context, this.setState),
     };
 
     // Initialize state.
@@ -45,8 +47,8 @@ export class Machine {
     this.state.onMusic(this.time);
   }
 
-  onExpression(expression: string): void {
-    this.state.onExpression(expression, this.time);
+  onExpression(): void {
+    this.state.onExpression(this.time);
   }
 
   private setState(state: State, timestamp: number): void {

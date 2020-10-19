@@ -1,9 +1,11 @@
 import { Entity } from "aframe";
 import * as faceapi from "face-api.js";
 
+import { ZeetBrainComponent } from "./zeet-brain";
 import { CompDefinition } from "./type";
 
 export type FaceExpression =
+  | "none"
   | "neutral"
   | "happy"
   | "sad"
@@ -17,10 +19,12 @@ interface FaceApiData {
   hud: Entity;
 }
 
-interface FaceApiState {}
+interface FaceApiState {
+  brain: typeof ZeetBrainComponent;
+}
 
 interface FaceApiMethods {
-  setExpression(expression: FaceExpression | null): void;
+  setExpression(expression: FaceExpression): void;
 }
 
 const MODELS_DIRECTORY = `assets/models`;
@@ -39,6 +43,10 @@ export const FaceApiComponent: CompDefinition<
   },
   init() {
     this.setExpression = this.setExpression.bind(this);
+
+    this.brain = this.data.object.components[
+      "zeet-brain"
+    ] as typeof ZeetBrainComponent;
 
     const video = (document.querySelector(
       "#video"
@@ -59,9 +67,8 @@ export const FaceApiComponent: CompDefinition<
     });
   },
 
-  setExpression(expression: FaceExpression | null) {
-    const clip = expression === "happy" ? "Wave" : "Idle";
-    this.data.object.setAttribute("animation-mixer", { clip });
+  setExpression(expression: FaceExpression) {
+    this.brain.setExpression(expression);
   },
 };
 
@@ -74,14 +81,14 @@ const loadModels = async (): Promise<void> => {
 
 const getExpression = async (
   video: HTMLVideoElement
-): Promise<FaceExpression | null> => {
+): Promise<FaceExpression> => {
   const detection = await faceapi
     .detectSingleFace(video, faceDetectorOptions)
     .withFaceExpressions();
 
   const expression = detection?.expressions.asSortedArray()[0];
 
-  return (expression?.expression as FaceExpression) || null;
+  return (expression?.expression as FaceExpression) || "none";
 };
 
 const connectCamera = async (video: HTMLVideoElement): Promise<void> => {

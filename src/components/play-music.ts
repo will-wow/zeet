@@ -2,6 +2,7 @@ import { DetailEvent, Entity } from "aframe";
 
 import { SoundComponent } from "./sound";
 import { CompDefinition } from "./type";
+import { ZeetBrainComponent } from "./zeet-brain";
 
 interface PlayMusicData {
   object: Entity;
@@ -9,6 +10,7 @@ interface PlayMusicData {
 
 interface PlayMusicState {
   playing: boolean;
+  brain: typeof ZeetBrainComponent;
 }
 
 export const PlayMusicComponent: CompDefinition<
@@ -19,6 +21,12 @@ export const PlayMusicComponent: CompDefinition<
     object: { type: "selector" },
   },
 
+  init() {
+    this.brain = this.data.object.components[
+      "zeet-brain"
+    ] as typeof ZeetBrainComponent;
+  },
+
   events: {
     click(event: DetailEvent<{ el: Entity; intersections: any[] }>) {
       this.playing = !this.playing;
@@ -26,11 +34,16 @@ export const PlayMusicComponent: CompDefinition<
       const sound = this.el.components["sound"] as SoundComponent;
       if (this.playing) {
         sound.playSound();
-        this.data.object.setAttribute("animation-mixer", { clip: "Dance" });
       } else {
         sound.stopSound();
-        this.data.object.setAttribute("animation-mixer", { clip: "Idle" });
       }
+
+      // TODO: don't do this every time
+      this.brain = this.data.object.components[
+        "zeet-brain"
+      ] as typeof ZeetBrainComponent;
+
+      this.brain.onMusic(this.playing);
     },
   },
 };

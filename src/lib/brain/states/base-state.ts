@@ -17,8 +17,14 @@ export class BaseState {
   tick(timestamp: number, delta: number): void {}
 
   onMusic(timestamp: number): void {
-    this.setState(State.dance, timestamp);
+    if (this.context.musicPlaying) {
+      this.setState(State.dance, timestamp);
+    }
   }
 
-  onExpression(expression: string, timestamp: number): void {}
+  onExpression(timestamp: number): void {
+    if (this.context.expression === "happy") {
+      this.setState(State.wave, timestamp);
+    }
+  }
 }

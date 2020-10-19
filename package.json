@@ -23,6 +23,7 @@
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.3",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/plugin-proposal-optional-chaining": "^7.12.1",
     "@babel/plugin-transform-runtime": "^7.12.1",
     "@babel/preset-env": "^7.3.1",
@@ -43,6 +44,7 @@
     "gh-pages": "^3.1.0",
     "html-entities": "^1.2.1",
     "html-require-loader": "*",
+    "ip": "^1.1.5",
     "npm-run-all": "^4.1.5",
     "nunjucks": "3.0.1",
     "prettier": "^2.0.5",
@@ -93,7 +95,8 @@
           "corejs": 3
         }
       ],
-      "@babel/plugin-proposal-optional-chaining"
+      "@babel/plugin-proposal-optional-chaining",
+      "@babel/plugin-proposal-class-properties"
     ]
   }
 }
