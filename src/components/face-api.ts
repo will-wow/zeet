@@ -27,7 +27,7 @@ interface FaceApiMethods {
   setExpression(expression: FaceExpression): void;
 }
 
-const MODELS_DIRECTORY = `assets/models`;
+const MODELS_DIRECTORY = "assets/ml-models";
 export const DEFAULT_DETECTIONS_TIME = 1000;
 
 const faceDetectorOptions = new faceapi.TinyFaceDetectorOptions();

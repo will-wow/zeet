@@ -12,6 +12,8 @@
   raycaster-move="target:#mark"
   place-on-click="mark: #mark; object: #object; shadowPlane: #shadow-plane; camera: #camera"
   face-api="object: #object; hud: #hud"
+  cursor="rayOrigin: mouse"
+  raycaster="objects: .interactive"
 >
   <require path="templates/assets.html"></require>
 
@@ -32,10 +34,11 @@
   <a-entity
     id="boombox"
     class="interactive"
+    scale="0.01 0.01 0.01"
+    rotation="0 180 0"
+    position="-2 0 -3"
+    gltf-model="#boombox"
     play-music="object: #object"
-    geometry="primitive: box; height: 0.4; width: 1; depth: 0.2"
-    material="color: gray"
-    position="-2 0.2 -3"
     sound="src: #happy-rock"
     shadow="receive: false; cast: true"
   ></a-entity>
@@ -74,7 +77,6 @@
            shadowCameraRight: 5;
            shadowCameraBottom: -5;
            shadowCameraTop: 5;"
-    target="object"
     position="-5 3 1.5"
   ></a-light>
 
@@ -82,11 +84,6 @@
     id="environment"
     environment="preset: forest; lighting: none; shadow: none; lightPosition: 0 2.15 0"
     hide-in-ar-mode
-  ></a-entity>
-
-  <a-entity
-    cursor="rayOrigin: mouse"
-    raycaster="objects: .interactive"
   ></a-entity>
 
   <a-camera id="camera">

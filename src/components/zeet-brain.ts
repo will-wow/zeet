@@ -1,7 +1,7 @@
 import { Entity } from "aframe";
 
 import { makeContext, BrainContext } from "../lib/brain/brain-context";
-import { Machine } from "../lib/brain/machine";
+import { Machine, State } from "../lib/brain/machine";
 
 import { CompDefinition } from "./type";
 
@@ -17,6 +17,7 @@ interface ZeetBrainState {
 interface ZeetBrainMethods {
   setExpression(expression: string): void;
   onMusic(playing: boolean): void;
+  onStateChange(state: State): void;
 }
 
 export const ZeetBrainComponent: CompDefinition<
@@ -29,33 +30,25 @@ export const ZeetBrainComponent: CompDefinition<
   },
 
   init() {
-    this.context = makeContext({ el: this.el });
-    this.machine = new Machine(this.context);
+    this.onStateChange = this.onStateChange.bind(this);
+
+    this.machine = new Machine({ el: this.el }, this.onStateChange);
   },
 
   tick(_timestamp, delta) {
-    const oldAnimation = this.machine.stateName;
     this.machine.tick(delta);
-
-    const newAnimation = this.machine.stateName;
-
-    if (oldAnimation !== newAnimation) {
-      this.el.setAttribute("animation-mixer", { clip: newAnimation });
-    }
   },
 
   onMusic(playing: boolean) {
-    this.context.musicPlaying = playing;
-    this.machine.onMusic();
-
-    this.el.setAttribute("animation-mixer", { clip: this.machine.stateName });
+    this.machine.onMusic(playing);
   },
 
   setExpression(expression) {
-    this.context.expression = expression;
-    this.machine.onExpression();
+    this.machine.onExpression(expression);
+  },
 
-    this.el.setAttribute("animation-mixer", { clip: this.machine.stateName });
+  onStateChange(clip) {
+    this.el.setAttribute("animation-mixer", { clip });
   },
 };
 

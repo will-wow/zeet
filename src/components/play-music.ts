@@ -34,8 +34,10 @@ export const PlayMusicComponent: CompDefinition<
       const sound = this.el.components["sound"] as SoundComponent;
       if (this.playing) {
         sound.playSound();
+        this.el.setAttribute("animation-mixer", { clip: "Take 001" });
       } else {
         sound.stopSound();
+        this.el.removeAttribute("animation-mixer");
       }
 
       // TODO: don't do this every time

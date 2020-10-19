@@ -60,6 +60,7 @@
     "start": "cross-env NODE_ENV=development webpack-dev-server --host 0.0.0.0 --progress --colors --hot-only --inline --port 3000",
     "build": "cross-env NODE_ENV=production webpack",
     "test": "yarn jest",
+    "test:watch": "yarn test --watch",
     "test:ci": "yarn test --watchAll=false",
     "eject": "react-scripts eject",
     "lint": "npm-run-all lint:*",
@@ -68,9 +69,7 @@
     "format:prettier": "yarn prettier --write './**/*.{ts,tsx,html,md,json}'",
     "deploy": "gh-pages -m 'deploy [ci skip]' --dist ./build"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
+  "eslintConfig": {},
   "browserslist": {
     "production": [
       ">0.2%",
