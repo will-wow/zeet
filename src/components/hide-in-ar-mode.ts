@@ -10,6 +10,7 @@ interface HideInArModeMethods {
 }
 
 export const HideInModeComponent: CompDefinition<
+  // eslint-disable-next-line @typescript-eslint/ban-types
   {},
   HideInArModeState,
   HideInArModeMethods

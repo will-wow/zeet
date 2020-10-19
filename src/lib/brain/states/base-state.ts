@@ -10,11 +10,11 @@ export class BaseState {
     public setState: (state: State, timestamp: number) => void
   ) {}
 
-  enter(timestamp: number): void {}
+  enter(_timestamp: number): void {}
 
-  exit(timestamp: number): void {}
+  exit(_timestamp: number): void {}
 
-  tick(timestamp: number, delta: number): void {}
+  tick(_timestamp: number, _delta: number): void {}
 
   onMusic(timestamp: number): void {
     if (this.context.musicPlaying) {

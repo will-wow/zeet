@@ -22,12 +22,11 @@ export const RaycasterMoveComponent: CompDefinition<
     "raycaster-intersected"(
       event: DetailEvent<{
         el: Entity<ObjectMap<RaycasterComponent>>;
-        intersections: any[];
       }>
-    ) {
+    ): void {
       this.raycaster = event.detail.el;
     },
-    "raycaster-intersected-cleared"() {
+    "raycaster-intersected-cleared"(): void {
       this.raycaster = null;
     },
   },

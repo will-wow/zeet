@@ -1,3 +1,4 @@
+import { Entity } from "aframe";
 import { Machine, State } from "./machine";
 
 describe("", () => {
@@ -9,7 +10,7 @@ describe("", () => {
 
     machine = new Machine(
       {
-        el: {} as any,
+        el: {} as Entity,
       },
       onStateChange
     );

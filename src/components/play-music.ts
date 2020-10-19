@@ -1,4 +1,4 @@
-import { DetailEvent, Entity } from "aframe";
+import { Entity } from "aframe";
 
 import { SoundComponent } from "./sound";
 import { CompDefinition } from "./type";
@@ -28,7 +28,7 @@ export const PlayMusicComponent: CompDefinition<
   },
 
   events: {
-    click(event: DetailEvent<{ el: Entity; intersections: any[] }>) {
+    click(): void {
       this.playing = !this.playing;
 
       const sound = this.el.components["sound"] as SoundComponent;

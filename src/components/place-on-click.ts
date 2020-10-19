@@ -15,6 +15,7 @@ interface MarkMoverMethods {
 
 export const PlaceOnClickComponent: CompDefinition<
   MarkMoverData,
+  // eslint-disable-next-line @typescript-eslint/ban-types
   {},
   MarkMoverMethods
 > = {

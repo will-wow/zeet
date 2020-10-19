@@ -3,7 +3,7 @@ import "aframe-environment-component";
 import "aframe-layout-component";
 import "aframe-look-at-component";
 
-const requireAll = (req: any) => {
+const requireAll = (req: __WebpackModuleApi.RequireContext) => {
   req.keys().forEach(req);
 };
 

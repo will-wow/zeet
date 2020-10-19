@@ -1,4 +1,4 @@
-import { DetailEvent, Entity } from "aframe";
+import { Entity } from "aframe";
 
 import { CompDefinition } from "./type";
 
@@ -12,13 +12,11 @@ export const MarkMoverComponent: CompDefinition<MarkMoverData> = {
   },
 
   events: {
-    "raycaster-intersection"(
-      event: DetailEvent<{ el: Entity; intersections: any[] }>
-    ) {
+    "raycaster-intersection"(): void {
       this.data.mark.setAttribute("color", "green");
     },
 
-    "raycaster-intersection-cleared"() {
+    "raycaster-intersection-cleared"(): void {
       this.data.mark.setAttribute("color", "red");
     },
   },

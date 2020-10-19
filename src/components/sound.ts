@@ -1,7 +1,7 @@
-import { Component } from "aframe";
+import { Component, Entity } from "aframe";
 
 export interface SoundComponent extends Component {
-  intersectedEls: any[];
+  intersectedEls: Entity[];
   playSound: () => void;
   stopSound: () => void;
 }

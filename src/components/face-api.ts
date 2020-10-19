@@ -96,7 +96,6 @@ const connectCamera = async (video: HTMLVideoElement): Promise<void> => {
     .getUserMedia({ video: { facingMode: "user" } })
     .then((stream) => {
       video.srcObject = stream;
-      return "connected" as "connected";
     });
 
   return new Promise((resolve) => {

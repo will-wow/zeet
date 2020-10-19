@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const MinifyPlugin = require("babel-minify-webpack-plugin");
 const fs = require("fs");
 const ip = require("ip");
@@ -27,8 +29,9 @@ module.exports = {
     build: "./src/index.ts",
   },
   output: {
-    path: __dirname,
-    filename: "build/[name].js",
+    path: path.resolve(__dirname, "build"),
+    publicPath: "/",
+    filename: "[name].js",
   },
   plugins: PLUGINS,
   module: {

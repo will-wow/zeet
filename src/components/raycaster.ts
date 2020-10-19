@@ -1,10 +1,11 @@
 import { Component, Entity } from "aframe";
-import { Vector3 } from "three";
+import { Vector3, Intersection } from "three";
 
 export interface RaycasterComponent extends Component {
-  intersectedEls: any[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  intersectedEls: Entity[];
   intersections: {
     point: Vector3;
   }[];
-  getIntersection(element: Entity): any;
+  getIntersection(element: Entity): Intersection;
 }
