@@ -8,7 +8,12 @@ const CopyPlugin = require("copy-webpack-plugin");
 const PLUGINS = [
   new webpack.EnvironmentPlugin(["NODE_ENV"]),
   new CopyPlugin({
-    patterns: [{ from: "public", to: "." }],
+    patterns: [
+      {
+        from: path.resolve(__dirname, "public"),
+        to: path.resolve(__dirname, "build"),
+      },
+    ],
   }),
   new webpack.HotModuleReplacementPlugin(),
 ];
