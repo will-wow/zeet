@@ -23,7 +23,7 @@ interface FaceApiMethods {
   setExpression(expression: FaceExpression | null): void;
 }
 
-const MODELS_DIRECTORY = `${process.env.PUBLIC_URL}/assets/models`;
+const MODELS_DIRECTORY = `assets/models`;
 export const DEFAULT_DETECTIONS_TIME = 1000;
 
 const faceDetectorOptions = new faceapi.TinyFaceDetectorOptions();
@@ -61,7 +61,7 @@ export const FaceApiComponent: CompDefinition<
 
   setExpression(expression: FaceExpression | null) {
     const clip = expression === "happy" ? "Wave" : "Idle";
-    // this.data.object.setAttribute("animation-mixer", { clip });
+    this.data.object.setAttribute("animation-mixer", { clip });
   },
 };
 

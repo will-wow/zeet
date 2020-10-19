@@ -1,17 +1,3 @@
-declare namespace JSX {
-  interface IntrinsicElements {
-    "a-entity": any;
-    "a-mixin": any;
-    "a-scene": any;
-    "a-assets": any;
-    "a-camera": any;
-    "a-asset-item": any;
-    "a-ring": any;
-    "a-text": any;
-    "a-light": any;
-  }
-}
-
 type AframeComponent = string | Record<string, string | number>;
 
 declare module "aframe-react" {
